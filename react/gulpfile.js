@@ -12,7 +12,7 @@ var watchify = require('watchify'),
   del = require('del');
 
 var customOpts = {
-  entries: ['./src/app.jsx'],
+  entries: ['./src/app.js'],
   debug: true
 };
 var opts = assign({}, watchify.args, customOpts);
