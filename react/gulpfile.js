@@ -12,7 +12,7 @@ var watchify = require('watchify'),
   del = require('del');
 
 var customOpts = {
-  entries: ['./src/app.js'],
+  entries: ['./src/app.jsx'],
   debug: true
 };
 var opts = assign({}, watchify.args, customOpts);
@@ -27,7 +27,8 @@ gulp.task('clean', function () {
 gulp.task('js', ['clean'], bundle);
 b.on('update', bundle);
 b.on('log', gutil.log);
-
+gulp.task('default', ['js']);
+ 
 function bundle() {
   return b
     .bundle()
